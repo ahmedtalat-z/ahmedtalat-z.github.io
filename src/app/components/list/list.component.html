@@ -1,0 +1,38 @@
+<div class="container">
+  <h1 class="py-4 text-center">List Component</h1>
+  <div class="w-75 m-auto">
+    <div class="form-floating mb-3">
+      <input type="input" class="form-control" id="floatingTitle" placeholder="title" [(ngModel)]="title">
+      <label for="floatingTitle">Title</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="input" class="form-control" id="floatingCategory" placeholder="categoey" [(ngModel)]="cat">
+      <label for="floatingCategory">Category</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="input" class="form-control" id="floatingPrice" placeholder="price" [(ngModel)]="price">
+      <label for="floatingPrice">Price</label>
+    </div>
+    <button (click)="AddToList()" class="text-center w-100 btn btn-outline-dark mb-5">Add</button>
+  </div>
+
+  <table class="table table-dark table-striped table-bordered text-center">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (el of list; track $index) {
+        <tr>
+          <td>{{el.title}}</td>
+          <td>{{el.cat}}</td>
+          <td>{{el.price}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
